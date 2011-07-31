@@ -7,6 +7,7 @@ gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'annotate'
 end
 
 group :test do
