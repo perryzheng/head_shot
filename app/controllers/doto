@@ -1,0 +1,44 @@
+1. app.post '/shots?shot[user_id]=3&shot[content]=hello&shot[push_url]=http://sn1.notify.live.net/throttledthirdparty/01.00/AAEBsDtINP5vRqDZ4jt6Mj9mAgAAAAADAQAAAAQUZm52OjIzOEQ2NDJDRkI5MEVFMEQ'
+
+2. http://sn1.notify.live.net/throttledthirdparty/01.00/AAEBsDtINP5vRqDZ4jt6Mj9mAgAAAAADAQAAAAQUZm52OjIzOEQ2NDJDRkI5MEVFMEQ
+
+3. 
+
+**controller** 
+  require 'rubygems' 
+  require 'httparty' 
+  class HttpTest 
+    include HTTParty 
+    base_uri 'https://test.domain.com' 
+  end 
+  def test_post 
+    @var = HttpTest.post('/entries/test_entries.jsp', :query=> 
+{:datos=>1011}) 
+  end 
+**view** 
+<div> 
+    response.code 
+    <br/> 
+    <%= @var.code %> 
+    <br/> 
+    response.body 
+    <br/> 
+    <%= @var.body %> 
+    <br/> 
+    response.headers.inspect 
+    <br/> 
+    <%= @var.headers.inspect %> 
+    <br/> 
+</div> 
+**output** 
+response.code 
+411 
+response.body 
+Length Required 
+WEBrick::HTTPStatus::LengthRequired 
+WEBrick/1.3.1 (Ruby/1.8.6/2008-08-11) at localhost:3000 
+response.headers.inspect 
+{"connection"=>["close"], "date"=>["Mon, 14 Sep 2009 09:24:22 GMT"], 
+"content-type"=>["text/html"], "server"=>["WEBrick/1.3.1 (Ruby/ 
+1.8.6/2008-08-11)"], "content-length"=>["303"]} 
+please help me out as i've been trying to work on it for a few days now

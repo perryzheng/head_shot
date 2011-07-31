@@ -1,4 +1,9 @@
+dir = File.expand_path(File.join(File.dirname(__FILE__), '../../', 'lib'))
+require File.join(dir, 'Push')
+
 class ShotsController < ApplicationController
+  include HTTParty
+  
   # GET /shots
   # GET /shots.xml
   def index
@@ -41,7 +46,9 @@ class ShotsController < ApplicationController
   # POST /shots.xml
   def create
     @shot = Shot.new(params[:shot])
-
+    
+    send_notification_to_phone(@shot)
+    
     respond_to do |format|
       if @shot.save
         format.html { redirect_to(@shot, :notice => 'Shot was successfully created.') }
@@ -80,4 +87,13 @@ class ShotsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+    def send_notification_to_phone(shot)
+       url = shot.push_url
+       puts url
+       message = 'hola!'     
+       options = { :body => message, :headers => {'X-NotificationClass' => '3'} }
+       Push.post(url, options)
+    end
 end

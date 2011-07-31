@@ -24,7 +24,7 @@ describe ShotsController do
   # Shot. As you add validations to Shot, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {:user_id => 2, :content => 'hello world'}
+    {:user_id => 2, :content => 'hello world', :push_url => 'http://sn1.notify.live.net/throttledthirdparty/01.00/AAGCRaSsL7K7TIB98x-UhjV6AgAAAAADAQAAAAQUZm52OjIzOEQ2NDJDRkI5MEVFMEQ'}
   end
 
   describe "GET index" do
@@ -75,6 +75,9 @@ describe ShotsController do
       it "redirects to the created shot" do
         post :create, :shot => valid_attributes
         response.should redirect_to(Shot.last)
+      end
+      
+      it "should a notification back to the phone" do
       end
     end
 
