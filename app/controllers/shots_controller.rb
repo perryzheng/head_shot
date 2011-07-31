@@ -88,12 +88,13 @@ class ShotsController < ApplicationController
     end
   end
   
-  private
+  private 
     def send_notification_to_phone(shot)
        url = shot.push_url
-       puts url
+       return if url.nil?
        message = 'hola!'     
        options = { :body => message, :headers => {'X-NotificationClass' => '3'} }
        Push.post(url, options)
+       return
     end
 end

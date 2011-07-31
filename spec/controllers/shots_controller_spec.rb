@@ -77,7 +77,11 @@ describe ShotsController do
         response.should redirect_to(Shot.last)
       end
       
-      it "should a notification back to the phone" do
+      it "should send a notification back to the phone" do
+        url = valid_attributes[:push_url]
+        Push.should_receive(:post).with(url, instance_of(Hash)).once
+        
+        post :create, :shot => valid_attributes
       end
     end
 
