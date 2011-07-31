@@ -24,7 +24,7 @@ describe ShotsController do
   # Shot. As you add validations to Shot, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:user_id => 2, :content => 'hello world'}
   end
 
   describe "GET index" do
