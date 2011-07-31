@@ -1,4 +1,8 @@
 HeadShot::Application.routes.draw do
+  resources :shots
+
+  resources :users
+
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
 
