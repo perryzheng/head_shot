@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.7'
 gem 'sqlite3', :group => :development
 gem 'httparty'
+gem 'rake', '0.8.7'
 
 group :development, :test do
   gem 'rspec-rails'
