@@ -1,5 +1,6 @@
 1. app.post '/shots?shot[user_id]=3&shot[content]=hello&shot[push_url]=http://sn1.notify.live.net/throttledthirdparty/01.00/AAGF-Uea9yLGQaRnaecQj1uoAgAAAAADAQAAAAQUZm52OjIzOEQ2NDJDRkI5MEVFMEQ'
 
+app.post '/shots?shot[user_id]=3&shot[content]=hi_justin&shot[push_url]=http://sn1.notify.live.net/throttledthirdparty/01.00/AAHk1GquCA5BRrzMfSyuq79oAgAAAAADAQAAAAQUZm52OkJCMjg1QTg1QkZDMkUxREQ	'
 
 
 2. http://sn1.notify.live.net/throttledthirdparty/01.00/AAEBsDtINP5vRqDZ4jt6Mj9mAgAAAAADAQAAAAQUZm52OjIzOEQ2NDJDRkI5MEVFMEQ

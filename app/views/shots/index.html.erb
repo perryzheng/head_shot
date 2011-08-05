@@ -5,6 +5,8 @@
     <th>Content</th>
     <th>User</th>
     <th>Push_url</th>
+	<th>created_at</th>
+	<th>updated_at</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,6 +17,8 @@
     <td><%= shot.content %></td>
     <td><%= shot.user_id %></td>
 	<td><%= shot.push_url%></td>
+	<td><%= shot.created_at%></td>
+	<td><%= shot.updated_at%></td>
     <td><%= link_to 'Show', shot %></td>
     <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
     <td><%= link_to 'Destroy', shot, :confirm => 'Are you sure?', :method => :delete %></td>
